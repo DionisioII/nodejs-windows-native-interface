@@ -125,5 +125,4 @@ Napi::Value JSVolumeControl::CreateNewItem(const Napi::CallbackInfo& info) {
 }
 
 
-// register `greet` module which calls `Init` method
 NODE_API_MODULE(proctor_controls, Init)
