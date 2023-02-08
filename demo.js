@@ -1,12 +1,12 @@
 
-const JSVolumeControl  = require('.\\build\\Release\\proctor_controls')
-console.log(JSVolumeControl)
+const proctorControls  = require('.\\build\\Release\\proctor_controls')
+console.log(proctorControls)
 
-example = new JSVolumeControl.JSVolumeControl()
+JSVolumeControl = new proctorControls.JSVolumeControl()
 
-example.setMuted(false);
-example.setVolume(0.7)
-console.log("\nvolume : " + example.getVolume());
+JSVolumeControl.setMuted(false);
+JSVolumeControl.setVolume(0.7)
+console.log("\nvolume : " + JSVolumeControl.getVolume());
 
 
 
