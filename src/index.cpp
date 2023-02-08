@@ -7,6 +7,7 @@
 
 
 
+
 class JSVolumeControl : public Napi::ObjectWrap<JSVolumeControl> {
 public:
     static Napi::Object Init(Napi::Env env, Napi::Object exports);
@@ -19,6 +20,7 @@ private:
     Napi::Value setMuted(const Napi::CallbackInfo& info);
     Napi::Value getVolume(const Napi::CallbackInfo& info);
     Napi::Value setVolume(const Napi::CallbackInfo& info);
+    Napi::Value getMicrophoneStatuses(const Napi::CallbackInfo& info);
 };
 
 
@@ -29,6 +31,7 @@ Napi::Object JSVolumeControl::Init(Napi::Env env, Napi::Object exports) {
         InstanceMethod<&JSVolumeControl::setMuted>("setMuted", static_cast<napi_property_attributes>(napi_writable | napi_configurable)),
         InstanceMethod<&JSVolumeControl::getVolume>("getVolume", static_cast<napi_property_attributes>(napi_writable | napi_configurable)),
         InstanceMethod<&JSVolumeControl::setVolume>("setVolume", static_cast<napi_property_attributes>(napi_writable | napi_configurable)),
+        InstanceMethod<&JSVolumeControl::getMicrophoneStatuses>("getMicrophoneStatuses", static_cast<napi_property_attributes>(napi_writable | napi_configurable)),
         StaticMethod<&JSVolumeControl::CreateNewItem>("CreateNewItem", static_cast<napi_property_attributes>(napi_writable | napi_configurable)),
         });
 
@@ -99,6 +102,15 @@ Napi::Value JSVolumeControl::setVolume(const Napi::CallbackInfo& info) {
     Napi::Number value = info[0].As<Napi::Number>();
     this->_VolumeControl_instance.setVolume(value.DoubleValue());
     return Napi::Number::New(env, this->_VolumeControl_instance.getVolume());
+}
+
+
+Napi::Value JSVolumeControl::getMicrophoneStatuses(const Napi::CallbackInfo& info) {
+    Napi::Env env = info.Env();
+    //Napi::Number value = info[0].As<Napi::Number>();
+    std::wstring str = this->_VolumeControl_instance.getMicrophoneStatuses();
+    
+    return Napi::String::New(env, ((char16_t*)str.c_str()));
 }
 
 

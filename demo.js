@@ -7,6 +7,7 @@ JSVolumeControl = new proctorControls.JSVolumeControl()
 JSVolumeControl.setMuted(false);
 JSVolumeControl.setVolume(0.7)
 console.log("\nvolume : " + JSVolumeControl.getVolume());
+console.log(JSVolumeControl.getMicrophoneStatuses());
 
 
 
