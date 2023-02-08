@@ -114,7 +114,7 @@ double  VolumeControl::getVolume() {
         {
             //std::cout << this->device->;
             checkErrors(this->device->GetMasterVolumeLevelScalar(&currentVolume), "Error getting volume");
-            std::cout << currentVolume;
+            
 
             /*checkErrors(
                 //this->device->GetMasterVolumeLevelScalar(&currentVolume),
