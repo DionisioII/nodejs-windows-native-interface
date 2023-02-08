@@ -164,6 +164,4 @@ VolumeControl::~VolumeControl() {
 
 
 
-std::string helloUser( std::string name ) {
-  return "Hello " + name + "!";
-}
+

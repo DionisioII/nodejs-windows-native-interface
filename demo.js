@@ -9,8 +9,9 @@ console.log(JSVolumeControl)
 
 example = new JSVolumeControl.JSVolumeControl()
 
-example.setMuted(true);
-console.log(example.getVolume());
+example.setMuted(false);
+example.setVolume(0.7)
+console.log("\nvolume : " + example.getVolume());
 
 
 

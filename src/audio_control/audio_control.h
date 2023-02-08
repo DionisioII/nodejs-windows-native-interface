@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <wrl/client.h>
 
-std::string helloUser( std::string name );
 
 
 

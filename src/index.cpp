@@ -3,17 +3,6 @@
 #include "audio_control/audio_control.h"
 #include <iostream>
 
-// native C++ function that is assigned to `greetHello` property on `exports` object
-Napi::String testHello(const Napi::CallbackInfo& info) {
-    Napi::Env env = info.Env();
-
-    // call `helloUser` function from `greeting.cpp` file
-    std::string user = (std::string) info[0].ToString();
-    std::string result = helloUser( user );
-
-    // return new `Napi::String` value
-    return Napi::String::New(env, result);
-}
 
 
 
@@ -120,13 +109,7 @@ Napi::Object Init(Napi::Env env, Napi::Object exports) {
 
     JSVolumeControl::Init(env, exports);
 
-    // set a key on `exports` object
-    exports.Set(
-        Napi::String::New(env, "testFunction"), // property name => "greetHello"
-        Napi::Function::New(env, testHello) // property value => `greetHello` function
-    );
-
-    
+        
     // return `exports` object (always)
     return exports;
 }
@@ -138,7 +121,7 @@ Napi::Value JSVolumeControl::CreateNewItem(const Napi::CallbackInfo& info) {
     // JS class the constructor represents.
     Napi::FunctionReference* constructor =
         info.Env().GetInstanceData<Napi::FunctionReference>();
-    return constructor->New({ Napi::Number::New(info.Env(), 42) });
+    return constructor->New({  });
 }
 
 
