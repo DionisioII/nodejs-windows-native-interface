@@ -111,22 +111,12 @@ double  VolumeControl::getVolume() {
         float currentVolume = 0;
 
         try
-        {
-            //std::cout << this->device->;
+        {            
             checkErrors(this->device->GetMasterVolumeLevelScalar(&currentVolume), "Error getting volume");
-            
-
-            /*checkErrors(
-                //this->device->GetMasterVolumeLevelScalar(&currentVolume),
-                "getting volume"
-            );*/
-
-        }
+                    }
         catch (...)
         {
-           // std::runtime_error(win_error_to_string(GetLastError()));
-            //std::cout << exc.what();
-            //std::cout << s << std::endl;
+           
             std::cout << "Catched Error getting volume\n";
             return -1.0;
         }
