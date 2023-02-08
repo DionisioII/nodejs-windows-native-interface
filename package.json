@@ -1,0 +1,25 @@
+{
+  "name": "emoj_proctor_win_addon",
+  "version": "1.0.0",
+  "description": "cpp utilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmojSRL-Team/emoj_proctor_win_addon.git"
+  },
+  "author": "giampiero cimini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmojSRL-Team/emoj_proctor_win_addon/issues"
+  },
+  "homepage": "https://github.com/EmojSRL-Team/emoj_proctor_win_addon#readme",
+  "dependencies": {
+    "node-addon-api": "^5.1.0"
+  },
+  "devDependencies": {
+    "bindings": "^1.5.0"
+  }
+}
