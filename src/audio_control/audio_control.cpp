@@ -29,7 +29,7 @@ void checkErrors(HRESULT hr, std::string error_message) {
         std::cout << error_message;
     }
     else {
-        //std::cout<<"Initilaization correct\n";
+        //std::cout<<"HR result was correct\n";
     }
 }
 
@@ -43,7 +43,7 @@ VolumeControl::VolumeControl() {
         
         // Creates a single uninitialized object of the class associated with a specified CLSID
         CoInitialize(NULL);
-        //Sleep(2000);
+       
         checkErrors(
             CoCreateInstance(
                 __uuidof(MMDeviceEnumerator),   // Requested COM device enumerator id
@@ -53,7 +53,7 @@ VolumeControl::VolumeControl() {
             ),
             "Error when trying to get a handle to MMDeviceEnumerator device enumerator"
         );
-        //leep(2000);
+       
         // Device interface pointer where we will dig the audio device endpoint
         Microsoft::WRL::ComPtr<IMMDevice> defaultDevice;
         
