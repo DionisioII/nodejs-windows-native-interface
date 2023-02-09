@@ -253,9 +253,12 @@ std::wstring VolumeControl::getMicrophoneStatuses() {
             device->second->GetMute(&is_Muted);
 
             float volume = 0.0f;
+            
             device->second->GetMasterVolumeLevelScalar(&volume);
 
-            result = result + device->first + L":::Muted:" + std::to_wstring(is_Muted) + L":::Volume:" + std::to_wstring(volume) + L";;;";
+            if (device != this->devices.begin()) result += L";;;";
+
+            result = result + device->first + L":::Muted:" + std::to_wstring(is_Muted) + L":::Volume:" + std::to_wstring(volume);
 
         }
         catch (...) {
