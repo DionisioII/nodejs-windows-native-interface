@@ -1,3 +1,5 @@
+#ifndef AUDIO_CONTROL
+#define AUDIO_CONTROL
 #include <string>
 #include <windows.h>
 #include <mmdeviceapi.h>
@@ -37,3 +39,5 @@ public:
 
 
 };
+
+#endif // !1

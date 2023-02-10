@@ -42,6 +42,7 @@ void checkErrors(HRESULT hr, std::string error_message) {
 
 
 VolumeControl::VolumeControl() {
+    
         
     this->initializeDevicesVector();
         
