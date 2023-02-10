@@ -3,7 +3,7 @@
 
 DisplayControl::DisplayControl() {
    
-    std::cout << "prova";
+   
 
 }
 

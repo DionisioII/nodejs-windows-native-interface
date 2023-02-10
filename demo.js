@@ -3,7 +3,7 @@ const proctorControls  = require('.\\build\\Release\\proctor_controls')
 console.log(proctorControls)
 
 JSVolumeControl = new proctorControls.JSVolumeControl()
-JSDisplayControl = new proctorControls.JSDisplayControl
+JSDisplayControl = new proctorControls.JSDisplayControl()
 
 console.log(JSDisplayControl.getActiveDisplays())
 
