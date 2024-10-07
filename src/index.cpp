@@ -5,6 +5,7 @@
 
 #include "JSVolumeControl.h"
 #include "JSDisplayControl.h"
+#include "JSBackgroundProcessMonitor.h"
 
 
 
@@ -17,6 +18,7 @@ Napi::Object Init(Napi::Env env, Napi::Object exports) {
 
     JSVolumeControl::Init(env, exports);
     JSDisplayControl::Init(env, exports);
+    JSProcessMonitor::Init(env, exports);
 
         
     // return `exports` object (always)
@@ -26,4 +28,4 @@ Napi::Object Init(Napi::Env env, Napi::Object exports) {
 
 
 
-NODE_API_MODULE(proctor_controls, Init)
+NODE_API_MODULE(win_native_interface, Init)
